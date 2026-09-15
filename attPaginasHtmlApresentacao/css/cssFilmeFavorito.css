@@ -1,0 +1,42 @@
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main figure img {
+    border-color: #c0392b;
+}
+ 
+main h2 {
+    border-bottom-color: #c0392b;
+}
+
+figure {
+    margin: 1rem 0;
+}
+figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+section nav a {
+    border-color: #c0392b;
+    color: #c0392b;
+    margin-right: 15px;
+}
+
+section nav a:hover {
+    background-color: #c0392b;
+    color: white;
+}
+
+.botaoTopo{
+    border-color: #c0392b;
+    color: #c0392b;
+    margin-right: 15px;
+}
+
+.botaoTopo:hover{
+    background-color: #c0392b;
+    color: white;
+}
+

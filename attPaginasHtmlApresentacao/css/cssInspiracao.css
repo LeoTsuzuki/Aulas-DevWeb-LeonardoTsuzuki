@@ -1,0 +1,26 @@
+
+main figure img {
+    border-radius: 50%;
+    border-color: #8e44ad;
+}
+ 
+figure{
+    text-align: center;
+}
+
+main h2 {
+    border-bottom-color: #8e44ad;
+}
+ 
+/* Deixa as frases (blockquote) mais destacadas */
+blockquote {
+    border-left: 4px solid #8e44ad;
+    padding: 10px 1rem;
+    font-size: 1.1rem;
+}
+ 
+cite {
+    color: #8e44ad;
+    font-style: normal;
+    font-weight: bold;
+}

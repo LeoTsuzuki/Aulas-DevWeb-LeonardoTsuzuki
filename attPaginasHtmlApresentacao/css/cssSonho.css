@@ -1,0 +1,19 @@
+
+figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+main section figure {
+    vertical-align: top;
+    width: 380px;
+    text-align: center;
+}
+ 
+main figure img {
+    border-color: #2980b9;
+}
+ 
+main h2 {
+    border-bottom-color: #2980b9;
+}

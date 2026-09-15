@@ -1,0 +1,19 @@
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+figure {
+    margin: 1rem 0;
+    text-align: center;
+}
+figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+img:hover{
+    outline: 2px solid red;
+}
+
+.secaoContato{
+    background-color: gainsboro;
+}
