@@ -87,3 +87,9 @@ main p {
     text-align: justify;
     text-indent: 1.5em;
 }
+
+footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 20px;
+}

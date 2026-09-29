@@ -1,0 +1,281 @@
+/* ==========================================================
+   cssMediaQueries.css
+   Regras responsivas para TODAS as páginas do site.
+
+   IMPORTANTE: este arquivo deve ser o ÚLTIMO <link> do <head>,
+   depois de cssGeral.css e do CSS específico da página.
+   Como as regras têm a mesma especificidade das originais,
+   quem vem por último é quem vence.
+
+   Breakpoints (desktop-first, com max-width):
+     992px  -> tablet na horizontal / notebook pequeno
+     768px  -> tablet na vertical
+     480px  -> celular
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   1) TABLET NA HORIZONTAL / NOTEBOOK PEQUENO  (até 992px)
+   ---------------------------------------------------------- */
+@media (max-width: 992px) {
+
+    main {
+        max-width: 95%;
+    }
+
+}
+
+
+/* ----------------------------------------------------------
+   2) TABLET NA VERTICAL  (até 768px)
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* --- Cabeçalho e rodapé --- */
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        padding: 0 15px 15px;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    /* --- Menu principal: itens empilhados, um por linha --- */
+    nav {
+        padding: 10px 15px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0 0 8px 0;
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+        padding: 10px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    /* --- Conteúdo --- */
+    main {
+        max-width: 100%;
+        margin: 15px auto;
+        padding: 0 12px;
+    }
+
+    main section {
+        padding: 15px;
+    }
+
+    /* Texto justificado gera "buracos" em telas estreitas */
+    main p {
+        text-align: left;
+        text-indent: 0;
+    }
+
+    /* --- Imagens e figuras nunca passam da largura da tela --- */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    main section figure {
+        width: auto;          /* anula o width:380px da página "Um Sonho" */
+        max-width: 100%;
+        margin: 1rem 0;
+    }
+
+    /* --- Mapa do Google (minhacidade.html) --- */
+    main iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        box-sizing: border-box;
+    }
+
+    /* --- Submenu de âncoras (filmefavorito.html e livro.html) --- */
+    section nav a {
+        display: inline-block;
+        margin-bottom: 8px;
+    }
+
+    /* --- Página do livro (livro.html) --- */
+    .heroLivro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .autorLivro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .caixaOferta {
+        padding: 15px;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   3) CELULAR  (até 480px)
+   ---------------------------------------------------------- */
+@media (max-width: 480px) {
+
+    body {
+        font-size: 0.95rem;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    main h2 {
+        font-size: 1.3rem;
+    }
+
+    main h3 {
+        font-size: 1.1rem;
+    }
+
+    main section {
+        padding: 12px;
+        border-radius: 6px;
+    }
+
+    blockquote {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1rem;
+    }
+
+    /* Página do livro */
+    .livroCapa img {
+        width: 180px;
+        height: auto;
+    }
+
+    .precoLivro {
+        font-size: 2rem;
+    }
+
+    .botaoComprar {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 1rem;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   4) CELULAR DEITADO (orientation + altura pequena)
+   Cabeçalho e menu mais compactos para sobrar espaço de leitura
+   ---------------------------------------------------------- */
+@media (orientation: landscape) and (max-height: 500px) {
+
+    header {
+        padding: 10px 20px;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+        padding-bottom: 4px;
+    }
+
+    nav {
+        padding: 6px 20px;
+    }
+
+    nav h2 {
+        margin-bottom: 4px;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   5) TELAS SEM MOUSE (celular/tablet) - alvos de toque maiores
+   e sem efeitos de :hover "grudando" após o toque
+   ---------------------------------------------------------- */
+@media (hover: none) {
+
+    nav ul li a,
+    section nav a,
+    .botaoTopo,
+    .botaoComprar {
+        min-height: 44px;
+        box-sizing: border-box;
+    }
+
+    img:hover {
+        outline: none;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   6) ACESSIBILIDADE: usuário pediu menos animação
+   ---------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   7) IMPRESSÃO
+   ---------------------------------------------------------- */
+@media print {
+
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    /* Menus e botões não fazem sentido no papel */
+    nav,
+    .botaoTopo,
+    .botaoComprar,
+    iframe {
+        display: none;
+    }
+
+    header {
+        background-color: white;
+        color: black;
+        padding: 0;
+    }
+
+    header hr {
+        border-top-color: black;
+    }
+
+    main {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    main section {
+        border: none;
+        page-break-inside: avoid;
+    }
+
+    /* Mostra o endereço dos links externos ao imprimir */
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+}
