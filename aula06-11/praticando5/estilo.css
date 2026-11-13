@@ -1,0 +1,22 @@
+.quadrado {
+            display: inline-block;
+            vertical-align: top;
+            width: 120px;
+            height: 120px;
+            border: 4px solid black;
+            margin-right: 15px;
+            cursor: pointer;
+            position: relative; 
+            top: 0px;
+            left: 0px;
+}
+
+.vermelho { background-color: red; }
+.azul { background-color: blue; }
+.verde { background-color: green; }
+
+
+.selecionado {
+    border-color: yellow;
+    z-index: 100;
+}

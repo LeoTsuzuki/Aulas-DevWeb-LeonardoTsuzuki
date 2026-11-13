@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de contato</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <script src="forms.js" defer></script>
+</head>
+<body>
+    <main class="container form-container">
+      <h1>Praticando 3 - Formulário com validações</h1>
+        <form class="contact-form">
+
+            <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control is-invalid" id="nome"required aria-describedby="nomeFeedback">
+            <div id="nomeFeedback" class="invalid-feedback">
+              Informe seu nome completo.
+            </div>
+          </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control is-invalid" id="email" name="email" autocomplete="email" required placeholder="seu@email.aqui">
+                <div id="emailFeedback" class="invalid-feedback">
+                  Informe um endereço de e-mail válido.
+              </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="tel" class="form-control is-invalid" id="telefone" name="telefone" autocomplete="tel" placeholder="(00) 00000-0000" required>
+                <div id="telefoneFeedback" class="invalid-feedback">
+                  Informe seu telefone de contato.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="idade" class="form-label">Faixa etária</label>
+                <select class="form-select is-invalid" id="idade" name="idade" required >
+                    <option value="" selected disabled>Selecione uma faixa etária</option>
+                    <option value="0-2">Até 2 anos</option>
+                    <option value="3-5">3 a 5 anos</option>
+                    <option value="6-10">6 a 10 anos</option>
+                    <option value="11-14">11 a 14 anos</option>
+                    <option value="15-17">15 a 17 anos</option>
+                    <option value="18+">18 anos ou mais</option>
+                </select>
+                <div id="idadeFeedback" class="invalid-feedback">
+              Informe sua faixa etária atual.
+            </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="observacoes" class="form-label">Observações</label>
+                <textarea class="form-control is-invalid" id="observacoes" name="observacoes" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+        </form>
+    </main>
+</body>
+</html>
